@@ -3,7 +3,7 @@ const readline = require('readline')
 const { google } = require('googleapis')
 const getClient = require('./auth')
 
-async function listEvents() {
+module.exports = async function listEvents() {
   const auth = await getClient()
 
   const calendar = google.calendar({ version: 'v3', auth })
@@ -30,5 +30,3 @@ async function listEvents() {
     },
   )
 }
-
-listEvents()
